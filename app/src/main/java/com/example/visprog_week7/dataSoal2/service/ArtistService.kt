@@ -1,5 +1,9 @@
 package com.example.visprog_week7.dataSoal2.service
 
+import com.example.visprog_week7.dataSoal2.model.AlbumDetailResponse
+import com.example.visprog_week7.dataSoal2.model.AlbumSearchResponse
+import com.example.visprog_week7.dataSoal2.model.ArtistResponse
+import com.example.visprog_week7.dataSoal2.model.TrackResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -10,20 +14,20 @@ interface ArtistService {
     @GET("search.php") // the file name here is the endpoint
     suspend fun searchArtist(
         @Query("s") artistName: String // based on the Cari artis: search.php?s={artistName}
-    ): String
+    ): ArtistResponse
 
     @GET("searchalbum.php")
     suspend fun searchAlbums(
         @Query("s") artistName: String // based on the Cari album: searchalbum.php?s={artistName}
-    ): String
+    ): AlbumSearchResponse
 
     @GET("album.php")
     suspend fun getAlbumDetails(
         @Query("m") albumId: String // based on the Detail album: album.php?m={albumId}
-    ): String
+    ): AlbumDetailResponse
 
     @GET("track.php")
     suspend fun getAlbumTrack(
         @Query("m") albumId: String
-    ): String // based on the Daftar lagu: track.php?m={albumId}
+    ): TrackResponse // based on the Daftar lagu: track.php?m={albumId}
 }
