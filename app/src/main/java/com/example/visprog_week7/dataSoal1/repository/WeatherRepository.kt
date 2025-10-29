@@ -1,8 +1,8 @@
-package com.example.visprog_week7.data.repository
+package com.example.visprog_week7.dataSoal1.repository
 
-import com.example.visprog_week7.data.di.NetworkModule
-import com.example.visprog_week7.data.model.WeatherResponseDto
-import com.example.visprog_week7.data.service.WeatherService
+import com.example.visprog_week7.dataSoal1.di.NetworkModule
+import com.example.visprog_week7.dataSoal1.model.WeatherResponseDto
+import com.example.visprog_week7.dataSoal1.service.WeatherService
 
 class WeatherRepository(
     private val weatherService: WeatherService = NetworkModule.weatherService
@@ -17,3 +17,4 @@ class WeatherRepository(
         }
     }
 }
+

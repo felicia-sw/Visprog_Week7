@@ -1,4 +1,4 @@
-package com.example.visprog_week7.data.model
+package com.example.visprog_week7.dataSoal1.model
 import com.google.gson.annotations.SerializedName
 data class WeatherResponseDto(
     @SerializedName("name") val name: String, // City name (e.g., "Kota Medan")

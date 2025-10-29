@@ -1,4 +1,4 @@
-package com.example.visprog_week7.ui.view
+package com.example.visprog_week7.uiSoal1.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -71,7 +71,7 @@ fun WeatherDetailCard(
 }
 
 @Composable
-@Preview(showBackground = true, showSystemUi = true)
+@Preview( showBackground = true)
 fun WeatherDetailCardPreview() {
     WeatherDetailCard(
         title = "Humidity",

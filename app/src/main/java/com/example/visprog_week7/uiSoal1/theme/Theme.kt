@@ -1,6 +1,5 @@
-package com.example.visprog_week7.ui.theme
+package com.example.visprog_week7.uiSoal1.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

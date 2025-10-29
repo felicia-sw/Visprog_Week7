@@ -1,4 +1,4 @@
-package com.example.visprog_week7.util
+package com.example.visprog_week7.utilSoal1
 
 object Constants {
     const val BASE_URL = "https://api.openweathermap.org/data/2.5/"

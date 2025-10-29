@@ -1,7 +1,7 @@
-package com.example.visprog_week7.data.di
+package com.example.visprog_week7.dataSoal1.di
 
-import com.example.visprog_week7.data.service.WeatherService
-import com.example.visprog_week7.util.Constants
+import com.example.visprog_week7.dataSoal1.service.WeatherService
+import com.example.visprog_week7.utilSoal1.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

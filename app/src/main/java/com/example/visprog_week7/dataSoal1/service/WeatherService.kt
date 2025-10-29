@@ -1,9 +1,9 @@
-package com.example.visprog_week7.data.service
+package com.example.visprog_week7.dataSoal1.service
 
 import retrofit2.http.GET
 import retrofit2.http.Query
-import com.example.visprog_week7.data.model.WeatherResponseDto
-import com.example.visprog_week7.util.Constants // Import Constants
+import com.example.visprog_week7.dataSoal1.model.WeatherResponseDto
+import com.example.visprog_week7.utilSoal1.Constants // Import Constants
 
 interface WeatherService {
     @GET("weather")

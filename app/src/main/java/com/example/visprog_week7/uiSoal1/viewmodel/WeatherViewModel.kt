@@ -1,11 +1,11 @@
-package com.example.visprog_week7.ui.viewmodel
+package com.example.visprog_week7.uiSoal1.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.visprog_week7.data.repository.WeatherRepository
+import com.example.visprog_week7.dataSoal1.repository.WeatherRepository
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException

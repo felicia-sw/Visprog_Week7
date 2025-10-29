@@ -1,6 +1,6 @@
-package com.example.visprog_week7.ui.viewmodel
+package com.example.visprog_week7.uiSoal1.viewmodel
 
-import com.example.visprog_week7.data.model.WeatherResponseDto
+import com.example.visprog_week7.dataSoal1.model.WeatherResponseDto
 
 sealed class WeatherUiState {
     data object Initial : WeatherUiState()

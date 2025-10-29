@@ -1,4 +1,4 @@
-package com.example.visprog_week7.ui.theme
+package com.example.visprog_week7.uiSoal1.theme
 
 import androidx.compose.ui.graphics.Color
 
