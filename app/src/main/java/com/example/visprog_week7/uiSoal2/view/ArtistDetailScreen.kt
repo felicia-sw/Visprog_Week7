@@ -1,8 +1,8 @@
 package com.example.visprog_week7.uiSoal2.view
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -28,7 +28,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.visprog_week7.dataSoal2.model.AlbumSummary
 import com.example.visprog_week7.dataSoal2.model.Artist
-import com.example.visprog_week7.uiSoal2.view.Navigation.Screen
+import com.example.visprog_week7.uiSoal2.navigation.Screen // FIX: Corrected import
 import com.example.visprog_week7.uiSoal2.viewmodel.ArtistUiState
 import com.example.visprog_week7.uiSoal2.viewmodel.ArtistViewModel
 
@@ -96,7 +96,7 @@ fun ArtistContent(
         OutlinedCard( // Use OutlinedCard for design compliance [cite: Soal Week 7 VP.pdf]
             shape = RoundedCornerShape(12.dp),
             colors = CardDefaults.outlinedCardColors(containerColor = CardColor),
-            border = BorderDefaults.outlinedCardBorder(true, CardColor),
+            border = BorderStroke(1.dp, CardColor), // Using solid color border for a clean look
             modifier = Modifier.fillMaxWidth().height(250.dp)
         ) {
             Box(Modifier.fillMaxSize()) {
@@ -216,6 +216,10 @@ fun AlbumGridItem(album: AlbumSummary, onClick: (String) -> Unit) {
         }
     }
 }
+
+// Common helper composables for Loading and Error screens were already provided in the previous step and are referenced here.
+// LoadingScreen and ErrorScreen need to be defined once in a common location or in one of the view files.
+// For now, I'll assume they are defined in ArtistDetailScreen.kt to simplify dependencies, but ideally they'd be in a utils file.
 
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {

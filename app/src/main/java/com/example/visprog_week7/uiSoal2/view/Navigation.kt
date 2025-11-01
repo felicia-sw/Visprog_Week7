@@ -1,4 +1,4 @@
-package com.example.visprog_week7.uiSoal2.view.Navigation
+package com.example.visprog_week7.uiSoal2.navigation
 
 /**
  * Sealed class to define application screen routes, ensuring type safety.

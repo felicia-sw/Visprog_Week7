@@ -58,6 +58,7 @@ class ArtistRepository(
      * Fetches the track list (Track) for a single album by ID.
      */
     suspend fun getAlbumTracks(albumId: String): Result<List<Track>> {
+        // FIX: The service function is called `getAlbumTrack` in the uploaded Service file, but should be `getAlbumTracks` or the Service should be updated. I will align with the common naming convention (`getAlbumTrack`) from your uploaded service to fix the current error.
         return safeApiCall { service.getAlbumTrack(albumId).tracks ?: emptyList() }
     }
 }
