@@ -143,7 +143,11 @@ fun AlbumContent(
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = TextColor,
-                modifier = Modifier.align(Alignment.Start).padding(bottom = 8.dp)
+                // FIX: Replaced unsupported .align() with .fillMaxWidth().wrapContentWidth(Alignment.Start)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentWidth(Alignment.Start)
+                    .padding(bottom = 8.dp)
             )
         }
 
