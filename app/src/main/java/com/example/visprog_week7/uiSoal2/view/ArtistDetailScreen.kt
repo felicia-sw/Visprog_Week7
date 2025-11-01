@@ -32,7 +32,7 @@ import com.example.visprog_week7.uiSoal2.navigation.Screen // FIX: Corrected imp
 import com.example.visprog_week7.uiSoal2.viewmodel.ArtistUiState
 import com.example.visprog_week7.uiSoal2.viewmodel.ArtistViewModel
 
-// Define a dark color scheme to match the 'retro / gruvbox' requirement
+
 private val PrimaryDark = Color(0xFF282828)
 private val CardColor = Color(0xFF323030)
 private val TextColor = Color(0xFFFBF1C7)
@@ -217,9 +217,6 @@ fun AlbumGridItem(album: AlbumSummary, onClick: (String) -> Unit) {
     }
 }
 
-// Common helper composables for Loading and Error screens were already provided in the previous step and are referenced here.
-// LoadingScreen and ErrorScreen need to be defined once in a common location or in one of the view files.
-// For now, I'll assume they are defined in ArtistDetailScreen.kt to simplify dependencies, but ideally they'd be in a utils file.
 
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {

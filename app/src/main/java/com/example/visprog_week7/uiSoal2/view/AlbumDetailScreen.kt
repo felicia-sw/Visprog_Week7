@@ -88,7 +88,7 @@ fun AlbumContent(
     viewModel: ArtistViewModel,
     modifier: Modifier = Modifier
 ) {
-    LazyColumn( // Required to display the list of songs [cite: Soal Week 7 VP.pdf]
+    LazyColumn(
         modifier = modifier
             .fillMaxSize()
             .padding(horizontal = 16.dp),
@@ -96,7 +96,7 @@ fun AlbumContent(
         contentPadding = PaddingValues(top = 16.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        // --- Album Metadata Section (Fixed Content) ---
+        // --- Album Metadata Section
         item {
             // Album Cover (smaller size on detail screen)
             OutlinedCard(
@@ -143,7 +143,7 @@ fun AlbumContent(
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = TextColor,
-                // FIX: Replaced unsupported .align() with .fillMaxWidth().wrapContentWidth(Alignment.Start)
+
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentWidth(Alignment.Start)
@@ -193,7 +193,7 @@ fun TrackItem(index: Int, trackName: String?, duration: String) {
                 maxLines = 1
             )
         }
-        // Duration (Formatted by ViewModel)
+
         Text(
             text = duration,
             color = GruvboxGreen,

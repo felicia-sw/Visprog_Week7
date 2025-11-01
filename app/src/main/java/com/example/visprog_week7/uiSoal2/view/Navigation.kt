@@ -1,8 +1,6 @@
 package com.example.visprog_week7.uiSoal2.navigation
 
-/**
- * Sealed class to define application screen routes, ensuring type safety.
- */
+
 sealed class Screen(val route: String) {
     // Route for the main Artist Detail Screen
     data object ArtistDetail : Screen("artist_detail")

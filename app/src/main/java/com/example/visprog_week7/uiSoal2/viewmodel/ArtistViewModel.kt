@@ -14,11 +14,7 @@ import java.util.concurrent.TimeUnit
 import retrofit2.HttpException
 
 
-/**
- * ViewModel to manage state and business logic for the Artist Explorer App.
- * Uses Coroutines (viewModelScope.launch, async) for asynchronous API calls and
- * updates observable UI state defined in ArtistUiState.
- */
+
 class ArtistViewModel(
     // The repository is injected here, decoupling the ViewModel from the Service layer
     private val repository: ArtistRepository = ArtistRepository()
@@ -37,10 +33,7 @@ class ArtistViewModel(
         loadArtistData("John Mayer")
     }
 
-    /**
-     * Loads the artist details and their albums concurrently.
-     * Uses Coroutines' async/await pattern for parallel fetching, making the app faster.
-     */
+
     fun loadArtistData(artistName: String) {
         artistUiState = ArtistUiState.Loading
         viewModelScope.launch {
@@ -63,9 +56,6 @@ class ArtistViewModel(
         }
     }
 
-    /**
-     * Loads the details (AlbumDetail and Tracks) for a specific album ID concurrently.
-     */
     fun loadAlbumDetails(albumId: String) {
         albumDetailUiState = AlbumDetailUiState.Loading
         viewModelScope.launch {
@@ -89,10 +79,7 @@ class ArtistViewModel(
         }
     }
 
-    /**
-     * Utility function to format track duration from milliseconds (String) to minutes:seconds format (m:ss).
-     * This fulfills the requirement for track information display.
-     */
+
     fun formatDuration(durationMs: String?): String {
         return try {
             val millis = durationMs?.toLongOrNull() ?: return "N/A"
@@ -107,9 +94,7 @@ class ArtistViewModel(
         }
     }
 
-    /**
-     * Centralized function to set the appropriate Error state for both screens.
-     */
+
     private fun handleApiError(e: Throwable?, isAlbumDetail: Boolean = false) {
         val errorMessage = when (e) {
             is IOException -> "Network Error: Check connection"

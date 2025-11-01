@@ -12,9 +12,7 @@ import com.example.visprog_week7.dataSoal2.model.Track
 //
 //State-Carrying (Data Classes): When the state is Success, the state object carries the actual required data (the artist and albums). The View doesn't need to look anywhere else for the data; it's right there in the state object.
 
-/**
- * Sealed class representing the possible states for the main Artist Detail screen.
- */
+
 sealed class ArtistUiState {
     data object Loading : ArtistUiState() // State to show a loading indicator (required)
     data class Success(
