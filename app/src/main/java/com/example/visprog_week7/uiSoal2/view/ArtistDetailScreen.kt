@@ -93,7 +93,7 @@ fun ArtistContent(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // --- 1. Artist Banner/Thumbnail ---
-        OutlinedCard( // Use OutlinedCard for design compliance [cite: Soal Week 7 VP.pdf]
+        OutlinedCard(
             shape = RoundedCornerShape(12.dp),
             colors = CardDefaults.outlinedCardColors(containerColor = CardColor),
             border = BorderStroke(1.dp, CardColor), // Using solid color border for a clean look
@@ -140,7 +140,7 @@ fun ArtistContent(
         OutlinedCard(
             shape = RoundedCornerShape(12.dp),
             colors = CardDefaults.outlinedCardColors(containerColor = CardColor),
-            border = BorderDefaults.outlinedCardBorder(true, CardColor),
+            border = BorderStroke(1.dp, CardColor),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
@@ -162,14 +162,14 @@ fun ArtistContent(
         )
 
         // --- 4. Albums Grid (LazyVerticalGrid) ---
-        // We constrain the height of the grid inside the verticalScrollable column.
+
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2), // Required LazyVerticalGrid [cite: Soal Week 7 VP.pdf]
+            columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(0.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
-                .heightIn(min = 200.dp, max = 800.dp) // Constrain height to allow the parent column to scroll
+                .heightIn(min = 200.dp, max = 800.dp)
                 .fillMaxWidth()
         ) {
             items(albums, key = { it.idAlbum }) { album ->
@@ -182,11 +182,11 @@ fun ArtistContent(
 
 @Composable
 fun AlbumGridItem(album: AlbumSummary, onClick: (String) -> Unit) {
-    OutlinedCard( // Use OutlinedCard for design compliance [cite: Soal Week 7 VP.pdf]
+    OutlinedCard(
         onClick = { onClick(album.idAlbum) },
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.outlinedCardColors(containerColor = CardColor),
-        border = BorderDefaults.outlinedCardBorder(true, CardColor),
+        border = BorderStroke(1.dp, CardColor),
         modifier = Modifier.fillMaxWidth()
     ) {
         Column(
@@ -228,7 +228,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            CircularProgressIndicator(color = AccentColor) // Show loading indicator [cite: Soal Week 7 VP.pdf]
+            CircularProgressIndicator(color = AccentColor) 
             Text(text = "Loading...", color = TextColor, modifier = Modifier.padding(top = 16.dp))
         }
     }

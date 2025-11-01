@@ -11,6 +11,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import java.io.IOException
 import java.util.concurrent.TimeUnit
+import retrofit2.HttpException
 
 
 /**
@@ -49,15 +50,12 @@ class ArtistViewModel(
                     val artistResult = async { repository.getArtistDetails(artistName) }
                     val albumsResult = async { repository.getArtistAlbums(artistName) }
 
-                    // Await results, using getOrThrow() to fail fast on success checks
+                    // Await results, using getOrThrow() to fail fast on failure
                     val artist = artistResult.await().getOrThrow()
-                    val albums = albumsResult.await().getOrThrow()
+                    val albums = albumsResult.await().getOrThrow() // Albums can be empty list
 
-                    if (artist != null) {
-                        artistUiState = ArtistUiState.Success(artist, albums)
-                    } else {
-                        handleApiError(Exception("Artist not found."))
-                    }
+                    // If we reach here, artist is non-null due to repository logic
+                    artistUiState = ArtistUiState.Success(artist, albums)
                 }
             } catch (e: Exception) {
                 handleApiError(e)
@@ -116,6 +114,7 @@ class ArtistViewModel(
         val errorMessage = when (e) {
             is IOException -> "Network Error: Check connection"
             is NoSuchElementException -> "Error: Data not found."
+            is HttpException -> "HTTP Error: ${e.code()}" // <--- ADD HttpException handling
             else -> "Error: Unknown error occurred."
         }
 
